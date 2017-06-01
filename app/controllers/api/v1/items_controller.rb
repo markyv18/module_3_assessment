@@ -13,8 +13,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    # render plain: @good_thing.to_json, status: :ok, content_type: 'application/json'
-    render plain: Item.create(item_params) #bang or no bang?
+    render json: Item.create(item_params)
   end
 
   private
