@@ -19,7 +19,7 @@ class Api::V1::ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(name:"bob", description:"is a great guy", image_url:"https://pbs.twimg.com/media/Ct29OhhUAAA7DbZ.jpg")
+    params.permit(:name, :description, :image_url)
   end
 
 end
