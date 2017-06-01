@@ -9,11 +9,12 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def destroy
-
+    Item.delete(params[:id])
   end
 
   def create
-    render json: Item.create(item_params)
+    # render plain: @good_thing.to_json, status: :ok, content_type: 'application/json'
+    render plain: Item.create(item_params) #bang or no bang?
   end
 
   private

@@ -19,6 +19,7 @@ gem 'faraday'
 gem 'pry'
 gem 'database_cleaner'
 gem 'factory_girl_rails'
+gem 'rails-api'
 
 group :development do
   gem "spring"
