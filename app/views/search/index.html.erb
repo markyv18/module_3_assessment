@@ -1,0 +1,10 @@
+<h1><%= @stores.count %></h1> total stores
+<ul>
+  <% @stores.each do |store| %>
+    <li><%= store.name %></li>
+    <li><%= store.city %></li>
+    <li><%= store.phone %></li>
+    <li><%= store.store_type %></li>
+    <li><%= store.distance %> from the zip you entered</li>
+    <br><br>
+  <% end %>
