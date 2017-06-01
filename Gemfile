@@ -12,6 +12,13 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'rspec-rails'
+gem 'launchy'
+gem 'capybara'
+gem 'faraday'
+gem 'pry'
+gem 'database_cleaner'
+gem 'factory_girl_rails'
 
 group :development do
   gem "spring"
