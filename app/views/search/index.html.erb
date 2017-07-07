@@ -1,6 +1,7 @@
-<h1><%= @stores.count %></h1> total stores
-<ul>
-  <% @stores.each do |store| %>
+<h1><%= @stores[0] %> Total Stores within 25 miles of that zip </h1>
+<br>
+<ul id="store-list">
+  <% @stores[1].each do |store| %>
     <li><%= store.name %></li>
     <li><%= store.city %></li>
     <li><%= store.phone %></li>

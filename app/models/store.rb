@@ -14,9 +14,36 @@ class Store
   end
 
   def self.stores(zip)
-    stores = StoreService.stores(zip)
-    stores.map do |store|
+    stores = StoreService.stores_search(zip)
+
+    total_number_of_stores = stores[:total]
+
+    list_of_stores = stores[:stores].map do |store|
       Store.new(store)
     end
+
+    [total_number_of_stores, list_of_stores]
+
   end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#

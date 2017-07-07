@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "a user can " do
 
-  it "can GET items" do
+  it "can GET all items" do
 
     items = create_list(:item, 5)
 
@@ -11,7 +11,7 @@ RSpec.describe "a user can " do
     expect(response).to be_success
     expect(response.status).to eq(200)
 
-    response_items = JSON.parse(response.body) #symbolize_names not working here... odd
+    response_items = JSON.parse(response.body)["items"]
 
     expect(response_items.count).to eq(5)
     expect(response_items.first["id"]).to eq(items.first.id)
@@ -25,14 +25,14 @@ RSpec.describe "a user can " do
     # but not the created_at or updated_at
   end
 
-  it "can GET an item" do
+  it "can GET _an_ item" do
     item = create(:item)
 
     get "/api/v1/items/#{item.id}"
 
     expect(response).to be_success
 
-    response_item1 = JSON.parse(response.body, symbolize_names: true)
+    response_item1 = JSON.parse(response.body, symbolize_names: true)[:item]
 
     expect(response.status).to eq(200)
     expect(response_item1[:id]).to eq(item.id)
@@ -44,7 +44,7 @@ RSpec.describe "a user can " do
   #   but not the created_at or updated_at
   end
 
-  xit "can DELETE an item" do
+  it "can DELETE an item" do
 
     #functionality working... just added somethign that broke it not chasing it down now
     item = create(:item)

@@ -10,13 +10,16 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "faker"
 gem "therubyracer"
+gem 'vcr'
+gem 'webmock'
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'active_model_serializers', '0.9.3'
 gem 'rspec-rails'
 gem 'launchy'
 gem 'capybara'
 gem 'faraday'
-gem 'pry'
+gem 'figaro'
 gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'rails-api'
